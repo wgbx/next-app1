@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+import { resolve } from 'path';
 
-export default nextConfig;
+
+
+export default {
+    cacheHandler: resolve('./cache-handler.js'),
+  }
