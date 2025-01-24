@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import cacheHandler from "./cache-handler";
 
-
 // This function can be marked `async` if using `await` inside
 export async function middleware(request) {
   const { nextUrl } = request;
@@ -11,8 +10,6 @@ export async function middleware(request) {
 
   const cacheSubdomain = await cache.get("subdomain");
 
-
-  console.log("🚀 ~ middleware ~ cacheSubdomain:", cacheSubdomain)
   if (!cacheSubdomain) {
     const cache = new cacheHandler();
     const data = await fetch(
