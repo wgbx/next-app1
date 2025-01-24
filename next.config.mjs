@@ -4,6 +4,5 @@ import { resolve } from 'path';
 
 
 export default {
-    cacheHandler: resolve('./cache-handler.js'),
     cacheMaxMemorySize: 50
   }
