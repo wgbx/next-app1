@@ -13,7 +13,10 @@ console.log("🚀 ~ tempDir:", tempDir);
 export const GET = async () => {
   const jsonData = await getSubdomainJson();
   console.log("🚀 ~ GET ~ jsonData:", jsonData);
-  return NextResponse.json({ code: 200, data: jsonData });
+  if(jsonData){
+    return NextResponse.json({ code: 200, data: jsonData });
+  }
+  return NextResponse.json({ code: 200, data: {} });
 };
 
 export const POST = async (req) => {
