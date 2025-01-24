@@ -13,7 +13,7 @@ console.log("🚀 ~ tempDir:", tempDir);
 export const GET = async () => {
   const jsonData = await getSubdomainJson();
   console.log("🚀 ~ GET ~ jsonData:", jsonData);
-  if(jsonData){
+  if (jsonData) {
     return NextResponse.json({ code: 200, data: jsonData });
   }
   return NextResponse.json({ code: 200, data: {} });
@@ -30,12 +30,14 @@ export const POST = async (req) => {
 };
 
 function setSubDomainJson(data) {
+  console.log("🚀 ~ setSubDomainJson ~ setSubDomainJson:")
   const filePath = path.join(tempDir, JSON_FILE_NAME);
   const dataDir = path.dirname(filePath);
   if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
   }
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  console.log("🚀 ~ setSubDomainJson ~ setSubDomainJson: writeFileSync")
 }
 
 async function getSubdomainJson() {
