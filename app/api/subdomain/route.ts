@@ -11,12 +11,12 @@ const tempDir = os.tmpdir();
 console.log("🚀 ~ tempDir:", tempDir);
 
 export const GET = async () => {
-  const jsonData = await getSubdomainJson();
-  console.log("🚀 ~ GET ~ jsonData:", jsonData);
-  if (jsonData) {
-    return NextResponse.json({ code: 200, data: jsonData });
-  }
-  return NextResponse.json({ code: 200, data: {} });
+  // const jsonData = await getSubdomainJson();
+  // console.log("🚀 ~ GET ~ jsonData:", jsonData);
+  // if (jsonData) {
+  //   return NextResponse.json({ code: 200, data: jsonData });
+  // }
+  return NextResponse.json({ code: 200 });
 };
 
 export const POST = async (req) => {
